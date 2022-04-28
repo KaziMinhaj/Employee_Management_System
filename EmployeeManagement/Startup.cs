@@ -79,13 +79,13 @@ namespace EmployeeManagement
             services.AddAuthentication()
                 .AddGoogle(options =>
                 {
-                    options.ClientId = "768535833546-0pskjhr884aihudhem8bndk26k67r7p9.apps.googleusercontent.com";
-                    options.ClientSecret = "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";
+                    options.ClientId = "";
+                    options.ClientSecret = "";
                 })
                 .AddFacebook(options =>
                 {
-                    options.AppId = "324570246382448";
-                    options.AppSecret = "04e1425727a40ea5cea004da78e5b030";
+                    options.AppId = "";
+                    options.AppSecret = "";
                 });
 
             services.ConfigureApplicationCookie(options =>
