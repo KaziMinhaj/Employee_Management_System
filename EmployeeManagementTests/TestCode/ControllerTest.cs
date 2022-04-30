@@ -16,7 +16,7 @@ using Xunit;
 
 namespace EmployeeManagementTests.TestCode
 {
-    public class HomeControllerTest
+    public class ControllerTest
     {
         private readonly HomeController controlller;
         private readonly Mock<IEmployeeRepository> _employeeRepository = new Mock<IEmployeeRepository>();
@@ -25,7 +25,7 @@ namespace EmployeeManagementTests.TestCode
         private readonly Mock<IDataProtectionProvider> _dataProtectionProvider = new Mock<IDataProtectionProvider>();
         private readonly Mock<DataProtectionPurposeStrings> _dataProtectionPurposeStrings = new Mock<DataProtectionPurposeStrings>();
 
-        public HomeControllerTest()
+        public ControllerTest()
         {
             controlller = new HomeController(_employeeRepository.Object,
                                       _hostingEnvironment.Object,
@@ -154,6 +154,32 @@ namespace EmployeeManagementTests.TestCode
 
             //Assert
             Assert.Equal(expectedType, actualType);           
+        }
+
+        [Fact]
+        public void TestList()
+        {
+            //Arrange
+            var controller = new DepartmentsController();
+
+            //Act
+            var result = controller.List();
+
+            //Assert
+            Assert.Equal("List() of DepartmentsController", result);
+        }
+
+        [Fact]
+        public void TestDetails()
+        {
+            //Arrange
+            var controller = new DepartmentsController();
+
+            //Act
+            var result = controller.Details();
+
+            //Assert
+            Assert.Equal("Details() of DepartmentsController", result);
         }
     }
 }

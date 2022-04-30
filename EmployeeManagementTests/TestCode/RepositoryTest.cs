@@ -8,7 +8,7 @@ using Xunit;
 
 namespace EmployeeManagementTests.TestCode
 {
-    public class MockEmployeeRepositoryTest
+    public class RepositoryTest
     {
         [Fact]
         public void TestGetEmployee()
